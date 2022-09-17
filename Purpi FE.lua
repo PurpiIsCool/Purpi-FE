@@ -1219,3 +1219,120 @@ firemo.CFrame = char.Torso.CFrame * CFrame.new(0,-1.5,0) * CFrame.Angles(0,0,0) 
 end)
   	end    
 })
+
+Tab:AddButton({
+	Name = "Fat Gamer (R6)",
+	Callback = function()
+      		print("button pressed")
+      		local plr = game.Players.LocalPlayer
+local char = plr.Character
+
+local aball = char:FindFirstChild("Space Cop").Handle
+aball:BreakJoints()
+
+aball.Mesh:Destroy()
+
+game.RunService.Heartbeat:Connect(function()
+aball.Velocity = Vector3.new(30,0,0)
+aball.CFrame = char.Torso.CFrame * CFrame.new(0,-0.5,-0.5) 
+end)
+
+--Desk
+
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+
+local gdesk = char:FindFirstChild("Tech Bro Standing Desk").Handle
+gdesk:BreakJoints()
+
+
+game.RunService.Heartbeat:Connect(function()
+gdesk.Velocity = Vector3.new(30,0,0)
+gdesk.CFrame = char.Torso.CFrame * CFrame.new(0,-1.5,-2.5) 
+end)
+
+--Chair
+
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+
+local gchair = char:FindFirstChild("Meshes/CrateAccessory").Handle
+gchair:BreakJoints()
+
+
+game.RunService.Heartbeat:Connect(function()
+gchair.Velocity = Vector3.new(30,0,0)
+gchair.CFrame = char.Torso.CFrame * CFrame.new(0,-2.7,1) 
+end)
+
+--Right Arm
+
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+local Toggle = false
+
+local rarm = char:FindFirstChild("Right Arm")
+rarm:BreakJoints()
+
+game.RunService.Heartbeat:Connect(function()
+rarm.Velocity = Vector3.new(30,0,0)
+plr:GetMouse().KeyDown:Connect(function(KEY)
+if KEY == "e" then if Toggle == true then Toggle = false else Toggle = true end end end) 
+
+if Toggle == true then
+rarm.CFrame = char.Torso.CFrame * CFrame.new(1.1,-0.5,-1) * CFrame.Angles(0.7,0,-0.3)
+else
+rarm.CFrame = char.Torso.CFrame * CFrame.new(1.3,0,-0.5) * CFrame.Angles(0.7,0,-0.2)
+end end)
+
+--Left Arm
+
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+local Toggle = false
+
+local larm = char:FindFirstChild("Left Arm")
+larm:BreakJoints()
+
+game.RunService.Heartbeat:Connect(function()
+larm.Velocity = Vector3.new(30,0,0)
+plr:GetMouse().KeyDown:Connect(function(KEY)
+if KEY == "e" then if Toggle == true then Toggle = false else Toggle = true end end end) 
+
+if Toggle == true then
+larm.CFrame = char.Torso.CFrame * CFrame.new(-1.3,0,-0.5) * CFrame.Angles(0.7,0,0.2)
+else
+larm.CFrame = char.Torso.CFrame * CFrame.new(-1.1,-0.5,-1) * CFrame.Angles(0.7,0,0.3)
+end end)
+
+--Right Leg
+
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+
+local rleg = char:FindFirstChild("Right Leg")
+rleg:BreakJoints()
+
+rleg.Mesh:Destroy()
+
+game.RunService.Heartbeat:Connect(function()
+rleg.Velocity = Vector3.new(30,0,0)
+rleg.CFrame = char.Torso.CFrame * CFrame.new(0,-200,0) 
+end)
+
+--Left Leg
+
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+
+local lleg = char:FindFirstChild("Left Leg")
+lleg:BreakJoints()
+
+lleg.Mesh:Destroy()
+
+game.RunService.Heartbeat:Connect(function()
+lleg.Velocity = Vector3.new(30,0,0)
+lleg.CFrame = char.Torso.CFrame * CFrame.new(0,-200,0) 
+end)
+  	end    
+})
