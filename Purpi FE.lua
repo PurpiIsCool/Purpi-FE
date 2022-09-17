@@ -1336,3 +1336,72 @@ lleg.CFrame = char.Torso.CFrame * CFrame.new(0,-200,0)
 end)
   	end    
 })
+
+Tab:AddButton({
+	Name = "Book Zen (R6)",
+	Callback = function()
+      		print("button pressed")
+      		local plr = game.Players.LocalPlayer
+local char = plr.Character
+
+local Hat = char:FindFirstChild("Magic Book (Black)").Handle
+Hat:BreakJoints()
+
+game.RunService.Heartbeat:Connect(function()
+Hat.Velocity = Vector3.new(0,0,0)
+Hat.CFrame = char.Torso.CFrame * CFrame.new(0,0.8,-1.6) * CFrame.Angles(0,1.6,0) --Position
+end)
+
+--rigt leg
+
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+
+local rleg = char:FindFirstChild("Right Leg")
+rleg:BreakJoints()
+
+game.RunService.Heartbeat:Connect(function()
+rleg.Velocity = Vector3.new(0,0,0)
+rleg.CFrame = char.Torso.CFrame * CFrame.new(0.4,-1.5,-0.5) * CFrame.Angles(0.8,0,-0.6) --Position
+end)
+
+--left leg
+
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+
+local lleg = char:FindFirstChild("Left Leg")
+lleg:BreakJoints()
+
+game.RunService.Heartbeat:Connect(function()
+lleg.Velocity = Vector3.new(0,0,0)
+lleg.CFrame = char.Torso.CFrame * CFrame.new(-0.4,-1.5,-0.5) * CFrame.Angles(0.8,0,0.6) --Position
+end)
+
+-- rigt arm
+
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+
+local rarm = char:FindFirstChild("Right Arm")
+rarm:BreakJoints()
+
+game.RunService.Heartbeat:Connect(function()
+rarm.Velocity = Vector3.new(0,0,0)
+rarm.CFrame = char.Torso.CFrame * CFrame.new(1.5,1,-0.5) * CFrame.Angles(0,0.6,2) --Position
+end)
+
+--left arm
+
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+
+local larm = char:FindFirstChild("Left Arm")
+larm:BreakJoints()
+
+game.RunService.Heartbeat:Connect(function()
+larm.Velocity = Vector3.new(0,0,0)
+larm.CFrame = char.Torso.CFrame * CFrame.new(-1.5,1,-0.5) * CFrame.Angles(0,-0.6,-2) --Position
+end)
+  	end    
+})
