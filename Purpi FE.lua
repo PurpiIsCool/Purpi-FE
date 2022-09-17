@@ -1107,33 +1107,51 @@ end end)
 })
 
 Tab:AddButton({
-	Name = "Pink Car (no fire) (R6)",
+	Name = "Water Biker (R6)",
 	Callback = function()
       		print("button pressed")
-      		--Car
+      		--Bike
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 200
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = 100
+
+local bike2 = char:FindFirstChild("Bike").Handle
+bike2:BreakJoints()
+
+game.RunService.Heartbeat:Connect(function()
+    bike2.Velocity = Vector3.new(30,0,0)
+bike2.CFrame = char.Torso.CFrame * CFrame.new(0,-1.5,-1) * CFrame.Angles(0,1.6,0)
+end)
+
+--Right leg
 
 local plr = game.Players.LocalPlayer
 local char = plr.Character
-local Toggle = false
 
-game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 250
-game.Players.LocalPlayer.Character.Humanoid.JumpPower = 0
-
-local pcar = char:FindFirstChild("Pink Plastic Toy Car").Handle
-pcar:BreakJoints()
+local rleg = char:FindFirstChild("Right Leg")
+rleg:BreakJoints()
 
 game.RunService.Heartbeat:Connect(function()
-pcar.Velocity = Vector3.new(30,0,0)
-plr:GetMouse().KeyDown:Connect(function(KEY)
-if KEY == "e" then if Toggle == true then Toggle = false else Toggle = true end end end) 
+    rleg.Velocity = Vector3.new(30,0,0)
+rleg.CFrame = char.Torso.CFrame * CFrame.new(1,-2,-0.3) * CFrame.Angles(0.2,0,0.4)
+end)
 
-if Toggle == true then
-pcar.CFrame = char.Torso.CFrame * CFrame.new(0,-1.5,2)
-else
-pcar.CFrame = char.Torso.CFrame * CFrame.new(0,-1.5,0)
-end end)
+--Left Leg
 
---Right arm
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+
+local lleg = char:FindFirstChild("Left Leg")
+lleg:BreakJoints()
+
+game.RunService.Heartbeat:Connect(function()
+    lleg.Velocity = Vector3.new(30,0,0)
+lleg.CFrame = char.Torso.CFrame * CFrame.new(-1,-2,-0.3) * CFrame.Angles(0.2,0,-0.4)
+end)
+
+--Right Arm
 
 local plr = game.Players.LocalPlayer
 local char = plr.Character
@@ -1148,71 +1166,56 @@ plr:GetMouse().KeyDown:Connect(function(KEY)
 if KEY == "e" then if Toggle == true then Toggle = false else Toggle = true end end end) 
 
 if Toggle == true then
-rarm.CFrame = char.Torso.CFrame * CFrame.new(1.5,0,0.5) * CFrame.Angles(-0.9,0,0.3)
+rarm.CFrame = char.Torso.CFrame * CFrame.new(0.8,0.5,-1) * CFrame.Angles(2,0,-1)
 else
-rarm.CFrame = char.Torso.CFrame * CFrame.new(1.5,0.3,-0.5) * CFrame.Angles(0.8,0.3,0)
+rarm.CFrame = char.Torso.CFrame * CFrame.new(1.5,0,-0.1) * CFrame.Angles(0.2,0,0.2)
 end end)
 
 --Left Arm
 
 local plr = game.Players.LocalPlayer
 local char = plr.Character
-local Toggle = false
 
 local larm = char:FindFirstChild("Left Arm")
 larm:BreakJoints()
 
 game.RunService.Heartbeat:Connect(function()
-larm.Velocity = Vector3.new(30,0,0)
-plr:GetMouse().KeyDown:Connect(function(KEY)
-if KEY == "e" then if Toggle == true then Toggle = false else Toggle = true end end end) 
+    larm.Velocity = Vector3.new(30,0,0)
+larm.CFrame = char.Torso.CFrame * CFrame.new(-1.2,0.3,-0.7) * CFrame.Angles(1.1,0,0.3)
+end)
 
-if Toggle == true then
-larm.CFrame = char.Torso.CFrame * CFrame.new(-1.5,0,0.5) * CFrame.Angles(-0.9,0,-0.3)
-else
-larm.CFrame = char.Torso.CFrame * CFrame.new(-1.5,0.3,-0.5) * CFrame.Angles(0.8,-0.3,0)
-end end)
 
---Right Leg
+--Drink 
 
 local plr = game.Players.LocalPlayer
 local char = plr.Character
 local Toggle = false
 
-local rleg = char:FindFirstChild("Right Leg")
-rleg:BreakJoints()
+local drink = char:FindFirstChild("Water Bottle").Handle
+drink:BreakJoints()
 
 game.RunService.Heartbeat:Connect(function()
-rleg.Velocity = Vector3.new(30,0,0)
+drink.Velocity = Vector3.new(30,0,0)
 plr:GetMouse().KeyDown:Connect(function(KEY)
 if KEY == "e" then if Toggle == true then Toggle = false else Toggle = true end end end) 
 
 if Toggle == true then
-rleg.CFrame = char.Torso.CFrame * CFrame.new(0.8,-1.8,-0.7) * CFrame.Angles(0.9,0,0.3)
+drink.CFrame = char.Torso.CFrame * CFrame.new(0,0.8,-1) * CFrame.Angles(0,0,0)
 else
-rleg.CFrame = char.Torso.CFrame * CFrame.new(1.5,-1.5,0) * CFrame.Angles(0,0,0.5)
+drink.CFrame = char.Torso.CFrame * CFrame.new(1.6,-1,-0.5) * CFrame.Angles(4,0,0)
 end end)
 
---Left Leg
+--Fire
 
 local plr = game.Players.LocalPlayer
 local char = plr.Character
-local Toggle = false
 
-local lleg = char:FindFirstChild("Left Leg")
-lleg:BreakJoints()
+local firemo = char:FindFirstChild("FireMohawk").Handle
+firemo:BreakJoints()
 
 game.RunService.Heartbeat:Connect(function()
-lleg.Velocity = Vector3.new(30,0,0)
-plr:GetMouse().KeyDown:Connect(function(KEY)
-if KEY == "e" then if Toggle == true then Toggle = false else Toggle = true end end end) 
-
-if Toggle == true then
-lleg.CFrame = char.Torso.CFrame * CFrame.new(-0.8,-1.8,-0.7) * CFrame.Angles(0.9,0,-0.3)
-else
-lleg.CFrame = char.Torso.CFrame * CFrame.new(-1.5,-1.5,0) * CFrame.Angles(0,0,-0.5)
-end end)
-
-
+firemo.Velocity = Vector3.new(30,0,0)
+firemo.CFrame = char.Torso.CFrame * CFrame.new(0,-1.5,0) * CFrame.Angles(0,0,0) --Position
+end)
   	end    
 })
